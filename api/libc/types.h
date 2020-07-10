@@ -58,17 +58,18 @@ typedef enum {secfalse = 0x55aa55aa, sectrue = 0xaa55aa55} secbool;
 #endif
 
 /*
- * This enumerate defines a list of usual errors that arrise in embedded systems, that can
- * be used in all drivers, stacks, libs and application as a unified error handling mechanism
- * Each stack can translate these errors into stack-specific error to the host depending on
- * the protocol standard (SDIO, SCSI, DFU...)
+ * This enumerate defines a list of usual errors that arrise in embedded systems,
+ * that can be used in all drivers, stacks, libs and application as a unified
+ * error handling mechanism. Each stack can translate these errors into stack-
+ * specific error to the host depending on the protocol standard (SDIO, SCSI,
+ * DFU...)
  */
 typedef enum {
     MBED_ERROR_NONE = 0,
     MBED_ERROR_NOMEM,
     MBED_ERROR_NOSTORAGE,
     MBED_ERROR_NOBACKEND,
-    MBED_ERROR_INVCREDENCIALS,
+    MBED_ERROR_INVCREDENTIALS,
     MBED_ERROR_UNSUPORTED_CMD,
     MBED_ERROR_INVSTATE,
     MBED_ERROR_NOTREADY,
@@ -83,5 +84,7 @@ typedef enum {
     MBED_ERROR_NOTFOUND,
     MBED_ERROR_INTR,
 } mbed_error_t;
+
+const char *mbederror(mbed_error_t error);
 
 #endif/*!TYPES_H_*/
